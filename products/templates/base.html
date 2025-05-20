@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Product App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'products/styles.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-box-open"></i>
+                <span>Product Manager</span>
+            </div>
+            <nav>
+                <a href="{% url 'product-list-view' %}" class="nav-link" data-page="products">All Products</a>
+                <a href="{% url 'add-product' %}" class="nav-link" data-page="add-product">Add Product</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Balurghat Technologies Ltd. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
